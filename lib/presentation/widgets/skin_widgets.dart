@@ -214,13 +214,15 @@ class _SkinViewer3DState extends State<SkinViewer3D> {
                 ? const Center(
                     child: Icon(Icons.person_off_outlined,
                         color: NovaColors.textSecondary, size: 48))
-                : CustomPaint(
-                    size: Size.expand(),
-                    painter: _PlayerPainter(
-                      img: _img!,
-                      yaw: _yaw,
-                      pitch: _pitch,
-                      slim: widget.slim,
+                : LayoutBuilder(
+                    builder: (ctx, c) => CustomPaint(
+                      size: Size(c.maxWidth, c.maxHeight),
+                      painter: _PlayerPainter(
+                        img: _img!,
+                        yaw: _yaw,
+                        pitch: _pitch,
+                        slim: widget.slim,
+                      ),
                     ),
                   ),
           ),
