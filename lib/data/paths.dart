@@ -6,8 +6,6 @@ import 'package:path_provider/path_provider.dart';
 /// Standard .minecraft-compatible layout under the app's private storage.
 /// Kept compatible so external runtimes can consume the same directories.
 class NovaPaths {
-  NovaPaths._();
-
   late final Directory root;
 
   Future<void> init() async {

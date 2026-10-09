@@ -5,6 +5,7 @@ import 'package:archive/archive.dart';
 import 'package:path/path.dart' as p;
 
 import '../data/paths.dart';
+import '../data/zipx.dart';
 import '../domain/core.dart';
 import '../domain/models.dart';
 
@@ -42,7 +43,7 @@ class ResourceService {
       final archive = ZipDecoder().decodeBytes(f.readAsBytesSync());
       final meta = archive.findFile('pack.mcmeta');
       if (meta != null) {
-        final j = jsonDecode(String.fromCharCodes(meta.contentAsBytes()))
+        final j = jsonDecode(String.fromCharCodes(meta.bytes()))
             as Map<String, dynamic>;
         packFormat = (j['pack']?['pack_format'] as num?)?.toInt();
       }
@@ -50,7 +51,7 @@ class ResourceService {
       if (icon != null) {
         final cache = File(p.join(core.paths.config, 'preview_${name.hashCode}.png'));
         if (!cache.existsSync()) {
-          cache.writeAsBytesSync(icon.contentAsBytes());
+          cache.writeAsBytesSync(icon.bytes());
         }
         preview = cache.path;
       }

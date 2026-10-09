@@ -215,7 +215,7 @@ class _SkinViewer3DState extends State<SkinViewer3D> {
                     child: Icon(Icons.person_off_outlined,
                         color: NovaColors.textSecondary, size: 48))
                 : CustomPaint(
-                    size: const Size.expand(),
+                    size: Size.expand(),
                     painter: _PlayerPainter(
                       img: _img!,
                       yaw: _yaw,
@@ -286,7 +286,7 @@ class _PlayerPainter extends CustomPainter {
 
     final faces = <_Face>[];
 
-    for (final box in _boxes) {
+    for (final box in _SkinViewer3DState._boxes) {
       final hw = (box.w * (slim && box.cx.abs() > 5 ? 0.75 : 1)) / 2;
       final hh = box.h / 2;
       final hd = box.d / 2;
@@ -316,13 +316,13 @@ class _PlayerPainter extends CustomPainter {
         [4, 5, 1, 0], // top (-y)
         [3, 2, 6, 7], // bottom (+y)
       ];
-      const normals = [
-        [0.0, 0, -1],
-        [1.0, 0, 0],
-        [0.0, 0, 1],
-        [-1.0, 0, 0],
-        [0.0, -1, 0],
-        [0.0, 1, 0],
+      const normals = <List<double>>[
+        [0.0, 0.0, -1.0],
+        [1.0, 0.0, 0.0],
+        [0.0, 0.0, 1.0],
+        [-1.0, 0.0, 0.0],
+        [0.0, -1.0, 0.0],
+        [0.0, 1.0, 0.0],
       ];
 
       for (int f = 0; f < 6; f++) {

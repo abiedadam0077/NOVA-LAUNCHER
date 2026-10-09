@@ -5,6 +5,7 @@ import 'package:path/path.dart' as p;
 
 import '../data/download_manager.dart';
 import '../data/jsonx.dart';
+import '../data/zipx.dart';
 import '../domain/core.dart';
 import '../domain/models.dart';
 
@@ -26,7 +27,7 @@ class ModpackService {
     final archive = ZipDecoder().decodeBytes(bytes);
     final indexFile = archive.findFile('modrinth.index.json');
     if (indexFile == null) return null;
-    final index = jsonMap(String.fromCharCodes(indexFile.contentAsBytes()));
+    final index = jsonMap(String.fromCharCodes(indexFile.bytes()));
     final name = index['name'] as String? ?? p.basenameWithoutExtension(zipPath);
     final deps = index['dependencies'] as Map<String, dynamic>? ?? {};
     String loader = 'vanilla';
@@ -59,7 +60,7 @@ class ModpackService {
         if (rel.isEmpty || rel.contains('..')) continue;
         final out = File(p.join(packDir.path, rel));
         await out.parent.create(recursive: true);
-        await out.writeAsBytes(f.contentAsBytes());
+        await out.writeAsBytes(f.bytes());
       }
     }
 

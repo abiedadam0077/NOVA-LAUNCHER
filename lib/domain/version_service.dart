@@ -6,6 +6,7 @@ import 'package:path/path.dart' as p;
 import '../data/download_manager.dart';
 import '../data/jsonx.dart';
 import '../data/paths.dart';
+import '../data/zipx.dart';
 import '../data/piston_api.dart';
 import '../domain/core.dart';
 import '../domain/models.dart';
@@ -173,7 +174,7 @@ class VersionService {
       for (final name in ['fabric.mod.json', 'mcmod.info', 'META-INF/mods.toml']) {
         final f = archive.findFile(name);
         if (f != null) {
-          final content = String.fromCharCodes(f.contentAsBytes());
+          final content = String.fromCharCodes(f.bytes());
           if (name == 'fabric.mod.json') {
             return jsonMap(content);
           }

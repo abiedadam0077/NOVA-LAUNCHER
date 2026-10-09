@@ -4,6 +4,7 @@ import 'package:archive/archive.dart';
 import 'package:path/path.dart' as p;
 
 import '../data/paths.dart';
+import '../data/zipx.dart';
 import '../domain/core.dart';
 import '../domain/models.dart';
 
@@ -45,7 +46,7 @@ class MapService {
       if (name.contains('..')) continue; // path traversal safety
       final out = File(p.join(core.paths.saves, name));
       await out.parent.create(recursive: true);
-      await out.writeAsBytes(f.contentAsBytes());
+      await out.writeAsBytes(f.bytes());
     }
     return true;
   }
@@ -75,7 +76,7 @@ class MapService {
       if (f.name.contains('..')) continue;
       final out = File(p.join(core.paths.saves, f.name));
       await out.parent.create(recursive: true);
-      await out.writeAsBytes(f.contentAsBytes());
+      await out.writeAsBytes(f.bytes());
     }
   }
 
