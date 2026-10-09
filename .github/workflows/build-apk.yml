@@ -26,13 +26,19 @@ jobs:
         run: flutter pub get
 
       - name: Analyze
-        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+        run: |
+          set -o pipefail
+          flutter analyze --no-fatal-infos --no-fatal-warnings 2>&1 | tee analyze.log
 
       - name: Unit & widget tests
-        run: flutter test
+        run: |
+          set -o pipefail
+          flutter test 2>&1 | tee test.log
 
       - name: Build release APK
-        run: flutter build apk --release
+        run: |
+          set -o pipefail
+          flutter build apk --release 2>&1 | tee build.log
 
       - name: Inspect APK
         run: |
@@ -50,3 +56,14 @@ jobs:
             - See docs/STATUS.md for the honest feature/test report.
           prerelease: true
           files: build/app/outputs/flutter-apk/app-release.apk
+
+      - name: Push logs on failure
+        if: failure()
+        run: |
+          git config user.name "nova-ci"
+          git config user.email "ci@users.noreply.github.com"
+          mkdir -p ci
+          cp analyze.log test.log build.log ci/ 2>/dev/null || true
+          git add -f ci/ || true
+          git diff --cached --quiet || git commit -m "ci: logs [skip ci]"
+          git push origin HEAD:arena/38d52947-nova-launcher || true
