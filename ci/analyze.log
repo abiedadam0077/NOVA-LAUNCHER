@@ -2,19 +2,11 @@ Analyzing NOVA-LAUNCHER...
 
    info • The 'if' statement could be replaced by a null-aware assignment • lib/core/utils.dart:53:7 • prefer_conditional_assignment
 warning • Unused import: '../domain/models.dart' • lib/data/microsoft_auth.dart:4:8 • unused_import
-  error • The class 'NovaPaths' doesn't have an unnamed constructor • lib/domain/core.dart:18:27 • new_with_undefined_constructor_default
 warning • The value of the field '_patterns' isn't used • lib/domain/log_service.dart:13:29 • unused_field
-  error • The method 'contentAsBytes' isn't defined for the type 'ArchiveFile' • lib/domain/map_service.dart:48:32 • undefined_method
-  error • The method 'contentAsBytes' isn't defined for the type 'ArchiveFile' • lib/domain/map_service.dart:78:32 • undefined_method
-  error • The method 'contentAsBytes' isn't defined for the type 'ArchiveFile' • lib/domain/modpack_service.dart:29:58 • undefined_method
-  error • The method 'contentAsBytes' isn't defined for the type 'ArchiveFile' • lib/domain/modpack_service.dart:62:34 • undefined_method
    info • Use interpolation to compose strings and values • lib/domain/performance_service.dart:41:9 • prefer_interpolation_to_compose_strings
-  error • The method 'contentAsBytes' isn't defined for the type 'ArchiveFile' • lib/domain/resource_service.dart:45:56 • undefined_method
-  error • The method 'contentAsBytes' isn't defined for the type 'ArchiveFile' • lib/domain/resource_service.dart:53:39 • undefined_method
 warning • Unused import: '../data/paths.dart' • lib/domain/runtime_bridge.dart:5:8 • unused_import
-warning • Unused import: '../data/piston_api.dart' • lib/domain/version_service.dart:9:8 • unused_import
-   info • The addition of a list item could be inlined • lib/domain/version_service.dart:45:9 • prefer_inlined_adds
-  error • The method 'contentAsBytes' isn't defined for the type 'ArchiveFile' • lib/domain/version_service.dart:176:50 • undefined_method
+warning • Unused import: '../data/piston_api.dart' • lib/domain/version_service.dart:10:8 • unused_import
+   info • The addition of a list item could be inlined • lib/domain/version_service.dart:46:9 • prefer_inlined_adds
 warning • Unused import: 'package:flutter_riverpod/flutter_riverpod.dart' • lib/presentation/about_screen.dart:2:8 • unused_import
    info • Use 'const' with the constructor to improve performance • lib/presentation/about_screen.dart:55:11 • prefer_const_constructors
    info • Use 'const' with the constructor to improve performance • lib/presentation/about_screen.dart:77:11 • prefer_const_constructors
@@ -36,11 +28,7 @@ warning • Unused import: '../domain/runtime_bridge.dart' • lib/presentation/
    info • Use 'const' for final variables initialized to a constant value • lib/presentation/splash_screen.dart:42:5 • prefer_const_declarations
    info • Don't use 'BuildContext's across async gaps • lib/presentation/versions_screen.dart:316:50 • use_build_context_synchronously
    info • Use 'const' with the constructor to improve performance • lib/presentation/widgets/skin_widgets.dart:72:17 • prefer_const_constructors
-  error • The class 'Size' doesn't have a constant constructor 'expand' • lib/presentation/widgets/skin_widgets.dart:218:38 • const_with_undefined_constructor
-  error • Undefined name '_boxes' • lib/presentation/widgets/skin_widgets.dart:289:23 • undefined_identifier
-  error • The argument type 'num' can't be assigned to the parameter type 'double'.  • lib/presentation/widgets/skin_widgets.dart:330:13 • argument_type_not_assignable
-  error • The argument type 'num' can't be assigned to the parameter type 'double'.  • lib/presentation/widgets/skin_widgets.dart:330:28 • argument_type_not_assignable
-  error • The argument type 'num' can't be assigned to the parameter type 'double'.  • lib/presentation/widgets/skin_widgets.dart:330:43 • argument_type_not_assignable
+  error • The method 'expand' isn't defined for the type 'Size' • lib/presentation/widgets/skin_widgets.dart:218:32 • undefined_method
    info • The local variable '_clientReturning' starts with an underscore • test/download_manager_test.dart:22:15 • no_leading_underscores_for_local_identifiers
 
-42 issues found. (ran in 12.3s)
+30 issues found. (ran in 13.5s)
