@@ -1,0 +1,43 @@
+name: nova_launcher
+description: "NOVA Launcher — A Premium Minecraft Java Launcher for Android."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State & navigation
+  flutter_riverpod: ^2.5.1
+  go_router: ^14.2.0
+
+  # Data & network
+  http: ^1.2.1
+  crypto: ^3.0.3
+  archive: ^3.6.1
+  sqflite: ^2.3.3
+  path: ^1.9.0
+  path_provider: ^2.1.3
+  flutter_secure_storage: ^9.2.2
+  shared_preferences: ^2.2.3
+
+  # UX
+  file_picker: ^8.0.5
+  url_launcher: ^6.3.0
+  intl: any
+  vector_math: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/

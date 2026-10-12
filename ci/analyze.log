@@ -1,0 +1,34 @@
+Analyzing NOVA-LAUNCHER...                                      
+
+   info • The 'if' statement could be replaced by a null-aware assignment • lib/core/utils.dart:53:7 • prefer_conditional_assignment
+warning • Unused import: '../domain/models.dart' • lib/data/microsoft_auth.dart:4:8 • unused_import
+warning • The value of the field '_patterns' isn't used • lib/domain/log_service.dart:13:29 • unused_field
+   info • Use interpolation to compose strings and values • lib/domain/performance_service.dart:41:9 • prefer_interpolation_to_compose_strings
+warning • Unused import: '../data/paths.dart' • lib/domain/runtime_bridge.dart:5:8 • unused_import
+warning • Unused import: '../data/piston_api.dart' • lib/domain/version_service.dart:10:8 • unused_import
+   info • The addition of a list item could be inlined • lib/domain/version_service.dart:46:9 • prefer_inlined_adds
+warning • Unused import: 'package:flutter_riverpod/flutter_riverpod.dart' • lib/presentation/about_screen.dart:2:8 • unused_import
+   info • Use 'const' with the constructor to improve performance • lib/presentation/about_screen.dart:55:11 • prefer_const_constructors
+   info • Use 'const' with the constructor to improve performance • lib/presentation/about_screen.dart:77:11 • prefer_const_constructors
+   info • Use 'const' with the constructor to improve performance • lib/presentation/account_screen.dart:280:15 • prefer_const_constructors
+   info • Use 'const' with the constructor to improve performance • lib/presentation/account_screen.dart:283:24 • prefer_const_constructors
+   info • Don't use 'BuildContext's across async gaps • lib/presentation/account_screen.dart:319:7 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check • lib/presentation/content_screen.dart:536:19 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check • lib/presentation/content_screen.dart:607:58 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check • lib/presentation/content_screen.dart:905:42 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/presentation/dashboard_screen.dart:79:30 • use_build_context_synchronously
+   info • Use 'const' with the constructor to improve performance • lib/presentation/dashboard_screen.dart:152:28 • prefer_const_constructors
+   info • Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check • lib/presentation/game_settings_screen.dart:155:46 • use_build_context_synchronously
+warning • Unused import: 'package:url_launcher/url_launcher.dart' • lib/presentation/settings_screen.dart:6:8 • unused_import
+warning • Unused import: '../domain/runtime_bridge.dart' • lib/presentation/settings_screen.dart:15:8 • unused_import
+   info • Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check • lib/presentation/settings_screen.dart:120:42 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check • lib/presentation/settings_screen.dart:126:42 • use_build_context_synchronously
+   info • Use 'const' with the constructor to improve performance • lib/presentation/settings_screen.dart:139:11 • prefer_const_constructors
+   info • Use 'const' with the constructor to improve performance • lib/presentation/settings_screen.dart:144:11 • prefer_const_constructors
+   info • Use 'const' for final variables initialized to a constant value • lib/presentation/splash_screen.dart:42:5 • prefer_const_declarations
+   info • Don't use 'BuildContext's across async gaps • lib/presentation/versions_screen.dart:316:50 • use_build_context_synchronously
+   info • Use 'const' with the constructor to improve performance • lib/presentation/widgets/skin_widgets.dart:72:17 • prefer_const_constructors
+  error • The method 'expand' isn't defined for the type 'Size' • lib/presentation/widgets/skin_widgets.dart:218:32 • undefined_method
+   info • The local variable '_clientReturning' starts with an underscore • test/download_manager_test.dart:22:15 • no_leading_underscores_for_local_identifiers
+
+30 issues found. (ran in 13.5s)
